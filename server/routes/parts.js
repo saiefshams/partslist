@@ -12,7 +12,7 @@ router.get('/',(req,res,next)=>{
         }
         else
         {
-            res.render('partlist',{title:"Parts",PartList: parts});
+            res.render('parts/parts',{title:"Parts",PartList: parts});
         }
     });
 });
