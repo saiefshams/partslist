@@ -1,0 +1,37 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/main_nav.ejs %>
+
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <h1><%= title %></h1>
+                <br>
+                <form class="form" method="post">
+                    <div class="form-group">
+                        <label for="typeTextField">Part Type: </label>
+                        <input type="text" class="form-control" id="typeTextField" placeholder="E.G.: Motherboard/CPU" name="type" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nameTextField">Part Name: </label>
+                        <input type="text" class="form-control" id="nameTextField" placeholder="E.G.: ASUS/GEFORCE" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="linkTextField">Link: </label>
+                        <input type="text" class="form-control" id="linkTextField" placeholder="Link of the part listing" name="link" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="priceTextField">Listed Price: </label>
+                        <input type="number" class="form-control" id="priceTextField" placeholder="$$$" name="price" required>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i>  Submit</button>
+                    <a href="/partslist" class="btn btn-warning"><i class="fas fa-undo"></i>  Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<% include ../partials/bottom_nav.ejs %>
+<% include ../partials/footer.ejs %>

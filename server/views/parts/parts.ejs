@@ -1,0 +1,45 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/main_nav.ejs %>
+
+  <main>
+      <div class="container">
+        <div class="row">
+        <div class="col-md-offset-5 col-md-15">
+        <h1><%= title %><h1>
+        <a href="partslist/add/" class="btn btn-primary" role="button">
+          <i class="fas fa-plus-circle"></i> Add a Part
+        </a>
+        <br>
+        <br>
+        <table class = "table table-bordered table-striped table-hover">
+            <tr>
+                <th class="text-center col-2">Part Type</th>
+                <th class="text-center col-5">Part Name</th>
+                <th class="text-center col-5">Part Link</th>
+                <th class="text-center col-1">Listed Price</th>
+                <th class="text-center col-1">Edit</th>
+                <th class="text-center col-1">Delete</th>
+            </tr>
+            <% for(let count=0; count<PartList.length; count++) { %>
+                <tr>
+                    <td class="text-center col-2"><%= PartList[count].type %></td>
+                    <td class="text-center col-5"><%= PartList[count].name %></td>
+                    <td class="text-center col-5"><%= PartList[count].link %></td>
+                    <td class="text-center col-1"><%= PartList[count].price %></td>
+                    <td class="text-center col-1"><a href="partslist/edit/<%= PartList[count]._id %>" class = "btn btn-primary"><i class = "fas fa-pencil-alt"></i> Edit</a>
+                    <td class="text-center col-1"><a href="partslist/delete/<%= PartList[count]._id %>" class = "btn btn-danger"><i class = "fas fa-trash-alt"></i>  Delete</a>
+                </tr>
+            <% } %>
+        </table>
+        </div>
+        </div>
+      </div>
+    </main>
+  
+  <% include ../partials/bottom_nav.ejs %>
+  <% include ../partials/footer.ejs %>
+
+
+
+
+
